@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <title>AR Mode</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script>
     </script>
   </head>
@@ -16,7 +16,6 @@
       <a-entity position="0 1.6 -0.2" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 5000">
         <a-entity
           gltf-model="#hooh"
-
           rotation="0 -90 0"
           animation-mixer
           scale="0.0001 0.0001 0.0001"
@@ -25,24 +24,7 @@
         </a-entity>
       </a-entity>
 
-      <a-sky color="skyblue" hide-in-ar-mode></a-sky>
+      <a-sky transparent="true"></a-sky>
     </a-scene>
-    <script>
-       AFRAME.registerComponent('hide-in-ar-mode', {
-         // Set this object invisible while in AR mode.
-         // TODO: could this be replaced with bind="visible: !ar-mode"
-         // with https://www.npmjs.com/package/aframe-state-component ?
-         init: function () {
-           this.el.sceneEl.addEventListener('enter-vr', (ev) => {
-             if (this.el.sceneEl.is('ar-mode')) {
-               this.el.setAttribute('visible', false);
-             }
-           });
-           this.el.sceneEl.addEventListener('exit-vr', (ev) => {
-             this.el.setAttribute('visible', true);
-           });
-         }
-       })
-     </script>
   </body>
 </html>
