@@ -13,12 +13,13 @@
         <a-asset-item id="hooh" src="./model/scene.glb"></a-asset-item>
       </a-assets>
 
-      <a-entity position="0 1.6 -0.2" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 5000">
+      <a-entity position="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 5000">
         <a-entity
           gltf-model="#hooh"
+          position="0 0 -10"
           rotation="0 -90 0"
           animation-mixer
-          scale="0.0001 0.0001 0.0001"
+          scale="0.01 0.01 0.01"
           id="pokemon"
         >
         </a-entity>
